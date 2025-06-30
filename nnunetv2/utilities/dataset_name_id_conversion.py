@@ -26,7 +26,7 @@ def find_candidate_datasets(dataset_id: int):
         candidates_preprocessed = []
 
     if nnUNet_raw is not None and isdir(nnUNet_raw):
-        candidates_raw = subdirs(nnUNet_raw, prefix=startswith, join=False)
+        candidates_raw = subdirs(nnUNet_raw, join=False)
     else:
         candidates_raw = []
 
@@ -56,7 +56,8 @@ def convert_id_to_dataset_name(dataset_id: int):
 
 
 def convert_dataset_name_to_id(dataset_name: str):
-    assert dataset_name.startswith("Dataset")
+    assert dataset_name.startswith("toothfairy3")
+    return 0
     dataset_id = int(dataset_name[7:10])
     return dataset_id
 
